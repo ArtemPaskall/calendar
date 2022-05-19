@@ -1,6 +1,8 @@
+// import '../../App.scss';
 import './MoviesList.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import dayjs from 'dayjs';
 import { getMoviesList } from '../../api/moviesList';
 import { Movie } from '../../react-app-env';
 import { MovieCard } from '../MovieCard/MovieCard';
@@ -90,21 +92,17 @@ export const MoviesList:React.FC = () => {
 
   return (
     <>
-
       {getErrorByType(serverError, noDate)}
       {isLoading
         ? (<Loader />)
         : (
           <>
-            <div>
-              <h2>{date}</h2>
-              <button
-                type="button"
-                className="button"
-                onClick={() => changeMoviesList()}
-              >
-                Short List
-              </button>
+            <div className="movie-list">
+              <div className="movie-list__date">
+                <h2 className="movie-list__date-title">
+                  {dayjs(date).format('DD MMMM YYYY')}
+                </h2>
+              </div>
               <div>
                 <ul>
                   {longList
@@ -123,12 +121,21 @@ export const MoviesList:React.FC = () => {
                       </li>
                     )))}
                 </ul>
+                <button
+                  type="button"
+                  className="button"
+                  onClick={() => changeMoviesList()}
+                >
+                  Short List
+                </button>
               </div>
 
               {noMovies && <p>noMovies</p>}
             </div>
             <div>
-              <h2>{date && getPrevDate(date)}</h2>
+              <h2>
+                {date && (dayjs(getPrevDate(date)).format('DD MMMM YYYY'))}
+              </h2>
               <button
                 type="button"
                 className="button"

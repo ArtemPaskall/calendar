@@ -7,7 +7,10 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <h1 className="App__title">Super film</h1>
+        <div className="App__header">
+          <h1 className="App__title">Super film</h1>
+        </div>
+
         <Routes>
           <Route path="/" element={<CalendarComponent />} />
           <Route path="/movies-list/:date" element={<MoviesList />} />
