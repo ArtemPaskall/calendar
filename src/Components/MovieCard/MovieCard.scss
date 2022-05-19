@@ -1,11 +1,51 @@
 .movie-card {
   display: flex;
+  color: rgb(27, 26, 26);
+  padding: 10px;
+
+  &__img {
+    width: 75px;
+    height: 100px;
+    object-position: center;
+    object-fit: cover;
+  }
 
   &__content {
-    padding: 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    color: rgb(27, 26, 26);
+  }
+
+  &__airdate {
+    color: rgb(152, 158, 158);
+    font-weight: 500;
   }
 
   &__description {
     display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #ebf0f2;
+    padding: 10px 0;
+    border-radius: 5px;
+    color: #999;
+    width: fit-content;
+
+    &--season {
+      padding-left: 10px;
+    }
+
+    &--episode {
+      padding: 0 10px;
+    }
   }
 }

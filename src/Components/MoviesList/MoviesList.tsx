@@ -113,7 +113,7 @@ export const MoviesList:React.FC = () => {
                         <MovieCard movie={movie} />
                       </li>
                     )))
-                    : (movies.slice(0, 1).map(movie => (
+                    : (movies.slice(0, 2).map(movie => (
                       <li
                         key={movie.id}
                       >
@@ -123,7 +123,7 @@ export const MoviesList:React.FC = () => {
                 </ul>
                 <button
                   type="button"
-                  className="button"
+                  className="movie-list__button"
                   onClick={() => changeMoviesList()}
                 >
                   Short List
@@ -132,17 +132,12 @@ export const MoviesList:React.FC = () => {
 
               {noMovies && <p>noMovies</p>}
             </div>
-            <div>
-              <h2>
-                {date && (dayjs(getPrevDate(date)).format('DD MMMM YYYY'))}
-              </h2>
-              <button
-                type="button"
-                className="button"
-                onClick={() => changePrevMoviesList()}
-              >
-                Short List
-              </button>
+            <div className="movie-list">
+              <div className="movie-list__date">
+                <h2 className="movie-list__date-title">
+                  {date && (dayjs(getPrevDate(date)).format('DD MMMM YYYY'))}
+                </h2>
+              </div>
               <ul>
                 {longListPrev
                   ? (moviesPrevDay.map(movie => (
@@ -152,7 +147,7 @@ export const MoviesList:React.FC = () => {
                       <MovieCard movie={movie} />
                     </li>
                   )))
-                  : (moviesPrevDay.slice(0, 1).map(movie => (
+                  : (moviesPrevDay.slice(0, 2).map(movie => (
                     <li
                       key={movie.id}
                     >
@@ -160,6 +155,13 @@ export const MoviesList:React.FC = () => {
                     </li>
                   )))}
               </ul>
+              <button
+                type="button"
+                className="movie-list__button"
+                onClick={() => changePrevMoviesList()}
+              >
+                Short List
+              </button>
               {noMoviesPrevDay && <p>noMovies</p>}
             </div>
           </>
