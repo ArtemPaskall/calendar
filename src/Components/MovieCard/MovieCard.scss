@@ -1,0 +1,11 @@
+.movie-card {
+  display: flex;
+
+  &__content {
+    padding: 0 10px;
+  }
+
+  &__description {
+    display: flex;
+  }
+}
