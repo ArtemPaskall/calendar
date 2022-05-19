@@ -1,0 +1,23 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 88%;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__img {
+    margin: 0 auto;
+    width: 200px;
+  }
+
+  &__description {
+    width: 250px;
+    margin: 30px auto 0;
+    text-align: center;
+
+  }
+}
