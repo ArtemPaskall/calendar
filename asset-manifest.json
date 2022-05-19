@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/ArtemPaskall/calendar.git/static/css/main.120e3cf2.chunk.css",
-    "main.js": "/ArtemPaskall/calendar.git/static/js/main.9a0200db.chunk.js",
-    "main.js.map": "/ArtemPaskall/calendar.git/static/js/main.9a0200db.chunk.js.map",
+    "main.css": "/ArtemPaskall/calendar.git/static/css/main.a836c4d2.chunk.css",
+    "main.js": "/ArtemPaskall/calendar.git/static/js/main.d312e8ab.chunk.js",
+    "main.js.map": "/ArtemPaskall/calendar.git/static/js/main.d312e8ab.chunk.js.map",
     "runtime-main.js": "/ArtemPaskall/calendar.git/static/js/runtime-main.1569d563.js",
     "runtime-main.js.map": "/ArtemPaskall/calendar.git/static/js/runtime-main.1569d563.js.map",
     "static/js/2.8b020156.chunk.js": "/ArtemPaskall/calendar.git/static/js/2.8b020156.chunk.js",
     "static/js/2.8b020156.chunk.js.map": "/ArtemPaskall/calendar.git/static/js/2.8b020156.chunk.js.map",
     "index.html": "/ArtemPaskall/calendar.git/index.html",
-    "static/css/main.120e3cf2.chunk.css.map": "/ArtemPaskall/calendar.git/static/css/main.120e3cf2.chunk.css.map",
+    "static/css/main.a836c4d2.chunk.css.map": "/ArtemPaskall/calendar.git/static/css/main.a836c4d2.chunk.css.map",
     "static/js/2.8b020156.chunk.js.LICENSE.txt": "/ArtemPaskall/calendar.git/static/js/2.8b020156.chunk.js.LICENSE.txt",
     "static/media/con-video-camera.4dbb78ca.png": "/ArtemPaskall/calendar.git/static/media/con-video-camera.4dbb78ca.png"
   },
   "entrypoints": [
     "static/js/runtime-main.1569d563.js",
     "static/js/2.8b020156.chunk.js",
-    "static/css/main.120e3cf2.chunk.css",
-    "static/js/main.9a0200db.chunk.js"
+    "static/css/main.a836c4d2.chunk.css",
+    "static/js/main.d312e8ab.chunk.js"
   ]
 }
