@@ -1,18 +1,19 @@
 @import "./reset.scss";
-// .App {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   max-width: 400px;
-//   height: 100vh;
-//   margin: 0 auto;
-//   box-sizing: border-box;
 
-//   &__title {
-//     margin-top: 20px;
-//     text-align: center;
-//   }
-// }
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 400px;
+  height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  &__title {
+    margin-top: 20px;
+    text-align: center;
+  }
+}
 
 iframe {
   display: none;
