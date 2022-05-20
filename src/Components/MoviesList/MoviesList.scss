@@ -1,10 +1,23 @@
-.root {
-  padding-top: 50px;
-}
+@import "../../variables.scss";
 
 .movie-list {
+  &__wrap {
+    padding-top: $header-height;
+  }
   &:last-child {
     margin-bottom: 30px;
+  }
+
+  &__link-wrap {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__link {
+    padding: 10px;
   }
 
   &__date {
@@ -37,5 +50,14 @@
     &:hover {
       background-color: #d6d6d6;
     }
+  }
+
+  &__error {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f2f6f8;
+    font-weight: 600;
+    border-radius: 7px;
   }
 }

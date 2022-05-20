@@ -1,4 +1,3 @@
-// import '../../App.scss';
 import './MoviesList.scss';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -7,48 +6,22 @@ import { getMoviesList } from '../../api/moviesList';
 import { Movie } from '../../react-app-env';
 import { MovieCard } from '../MovieCard/MovieCard';
 import { Loader } from '../Loader/Loader';
-import { formatDate } from '../Calendar/Calendar';
+import { getErrorByType, getPrevDate } from './function';
+import arrow from '../../Images/arrow_icon-red.svg';
 
 export const MoviesList:React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [moviesPrevDay, setMoviesPrevDay] = useState<Movie[]>([]);
-
   const [serverError, setServerError] = useState<boolean>(false);
   const [noDate, setNoDate] = useState<boolean>(false);
-
   const [noMovies, setNoMovies] = useState<boolean>(false);
   const [noMoviesPrevDay, setNoPrevMovies] = useState<boolean>(false);
-
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
   const { date } = useParams();
-
   const [longList, setLongList] = useState<boolean>(false);
   const [longListPrev, setLongListPrev] = useState<boolean>(false);
 
-  const getPrevDate = (d: string) => {
-    const year = +d.slice(0, 4);
-    const month = +d.slice(5, 7);
-    const day = +d.slice(8, 10);
-
-    const prevDay = new Date(year, month - 1, day - 1);
-
-    return formatDate(prevDay);
-  };
-
-  const getErrorByType = (serverError1: boolean,
-    dateFromCalendar: boolean) => {
-    switch (true) {
-      case serverError1:
-        return (<p>Server Error</p>);
-      case dateFromCalendar:
-        return (<p>Date Error</p>);
-      default:
-        return '';
-    }
-  };
-
-  const chechEmptyList = (moviesList: Movie[]) => {
+  const checkEmptyList = (moviesList: Movie[]) => {
     if (moviesList.length === 0) {
       setNoMovies(true);
     }
@@ -56,7 +29,7 @@ export const MoviesList:React.FC = () => {
     return moviesList;
   };
 
-  const chechEmptyPrevList = (moviesList: Movie[]) => {
+  const checkEmptyPrevList = (moviesList: Movie[]) => {
     if (moviesList.length === 0) {
       setNoPrevMovies(true);
     }
@@ -77,13 +50,13 @@ export const MoviesList:React.FC = () => {
       setNoDate(true);
     } else {
       getMoviesList(date)
-        .then((response) => chechEmptyList(response))
+        .then((response) => checkEmptyList(response))
         .then(response => setMovies(response))
         .catch(() => setServerError(true))
         .finally(() => setIsLoading(false));
 
       getMoviesList(getPrevDate(date))
-        .then((response) => chechEmptyPrevList(response))
+        .then((response) => checkEmptyPrevList(response))
         .then(response => setMoviesPrevDay(response))
         .catch(() => setServerError(true))
         .finally(() => setIsLoading(false));
@@ -91,7 +64,12 @@ export const MoviesList:React.FC = () => {
   }, [date]);
 
   return (
-    <div className="root">
+    <div className="movie-list__wrap">
+      <div className="movie-list__link-wrap">
+        <a href="/" className="movie-list__link">
+          <img src={arrow} alt="arrow" />
+        </a>
+      </div>
       {getErrorByType(serverError, noDate)}
       {isLoading
         ? (<Loader />)
@@ -127,7 +105,11 @@ export const MoviesList:React.FC = () => {
               >
                 {longList ? ('Show short list') : (`All ${movies.length} movies`)}
               </button>
-              {noMovies && <p>noMovies</p>}
+              {noMovies && (
+                <p className="movie-list__error">
+                  There are no movies to this date
+                </p>
+              )}
             </div>
             <div className="movie-list" id="list-buttom">
               <div className="movie-list__date">
@@ -159,7 +141,11 @@ export const MoviesList:React.FC = () => {
               >
                 {longListPrev ? ('Show short list') : (`All ${moviesPrevDay.length} movies`)}
               </button>
-              {noMoviesPrevDay && <p>noMovies</p>}
+              {noMoviesPrevDay && (
+                <p className="movie-list__error">
+                  There are no movies to this date
+                </p>
+              )}
             </div>
           </>
         )}

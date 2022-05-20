@@ -1,13 +1,16 @@
+@import ""../../variables.scss";
+
 .home-page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
-  padding-top: 50px;
+  padding-top: $header-height;
 
   &__content {
     display: flex;
     flex-direction: column;
+    padding-top: 35px;
   }
 
   &__img {
