@@ -1,6 +1,6 @@
 import './MoviesList.scss';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import dayjs from 'dayjs';
 import { getMoviesList } from '../../api/moviesList';
 import { Movie } from '../../react-app-env';
@@ -66,9 +66,9 @@ export const MoviesList:React.FC = () => {
   return (
     <div className="movie-list__wrap">
       <div className="movie-list__link-wrap">
-        <a href="/" className="movie-list__link">
+        <Link to="/" className="movie-list__link">
           <img src={arrow} alt="arrow" />
-        </a>
+        </Link>
       </div>
       {getErrorByType(serverError, noDate)}
       {isLoading
