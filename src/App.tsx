@@ -12,8 +12,14 @@ const App = () => {
         </div>
 
         <Routes>
-          <Route path="/" element={<CalendarComponent />} />
-          <Route path="/movies-list/:date" element={<MoviesList />} />
+          <Route
+            path="/"
+            element={<CalendarComponent />}
+          />
+          <Route
+            path="/movies-list/:date"
+            element={<MoviesList />}
+          />
           <Route path="*" element={<h3>Page not found</h3>} />
         </Routes>
       </div>

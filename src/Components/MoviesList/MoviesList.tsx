@@ -91,48 +91,45 @@ export const MoviesList:React.FC = () => {
   }, [date]);
 
   return (
-    <>
+    <div className="root">
       {getErrorByType(serverError, noDate)}
       {isLoading
         ? (<Loader />)
         : (
           <>
-            <div className="movie-list">
+            <div className="movie-list" id="list-top">
               <div className="movie-list__date">
                 <h2 className="movie-list__date-title">
                   {dayjs(date).format('DD MMMM YYYY')}
                 </h2>
               </div>
-              <div>
-                <ul>
-                  {longList
-                    ? (movies.map(movie => (
-                      <li
-                        key={movie.id}
-                      >
-                        <MovieCard movie={movie} />
-                      </li>
-                    )))
-                    : (movies.slice(0, 2).map(movie => (
-                      <li
-                        key={movie.id}
-                      >
-                        <MovieCard movie={movie} />
-                      </li>
-                    )))}
-                </ul>
-                <button
-                  type="button"
-                  className="movie-list__button"
-                  onClick={() => changeMoviesList()}
-                >
-                  Short List
-                </button>
-              </div>
-
+              <ul>
+                {longList
+                  ? (movies.map(movie => (
+                    <li
+                      key={movie.id}
+                    >
+                      <MovieCard movie={movie} />
+                    </li>
+                  )))
+                  : (movies.slice(0, 2).map(movie => (
+                    <li
+                      key={movie.id}
+                    >
+                      <MovieCard movie={movie} />
+                    </li>
+                  )))}
+              </ul>
+              <button
+                type="button"
+                className="movie-list__button"
+                onClick={() => changeMoviesList()}
+              >
+                {longList ? ('Show short list') : (`All ${movies.length} movies`)}
+              </button>
               {noMovies && <p>noMovies</p>}
             </div>
-            <div className="movie-list">
+            <div className="movie-list" id="list-buttom">
               <div className="movie-list__date">
                 <h2 className="movie-list__date-title">
                   {date && (dayjs(getPrevDate(date)).format('DD MMMM YYYY'))}
@@ -160,12 +157,12 @@ export const MoviesList:React.FC = () => {
                 className="movie-list__button"
                 onClick={() => changePrevMoviesList()}
               >
-                Short List
+                {longListPrev ? ('Show short list') : (`All ${moviesPrevDay.length} movies`)}
               </button>
               {noMoviesPrevDay && <p>noMovies</p>}
             </div>
           </>
         )}
-    </>
+    </div>
   );
 };

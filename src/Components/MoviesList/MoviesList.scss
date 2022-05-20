@@ -1,14 +1,15 @@
-// .App {
-//   height: 100%;
-// }
+.root {
+  padding-top: 50px;
+}
 
 .movie-list {
-  height: 50%;
+  &:last-child {
+    margin-bottom: 30px;
+  }
 
   &__date {
     height: 60px;
     border-bottom: 1px solid #dadfe0;
-    margin-bottom: 10px;
   }
 
   &__date-title {
@@ -19,12 +20,10 @@
   }
 
   &__button {
-    // display: flex;
-    // justify-content: center;
-    margin: 0 auto;
-    // padding: 20px;
-    width: 100%;
+    width: 360px;
     height: 45px;
+    margin: 0 20px;
+    margin-top: 40px;
     background-color: #fff;
     border: 2px solid #d6d6d6;
     border-radius: 5px;
@@ -33,5 +32,10 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 500;
     color: #7f7b7b;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #d6d6d6;
+    }
   }
 }

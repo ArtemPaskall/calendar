@@ -3,6 +3,10 @@ $border-color-hover: #e10246;
 $border: 2px solid $border-color;
 $border-hover: 2px solid $border-color-hover;
 
+.App--active {
+  height: 100vh;
+}
+
 .react-calendar {
   width: 100%;
   max-width: 100%;
