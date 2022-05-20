@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "./static/css/main.69801e9f.chunk.css",
-    "main.js": "./static/js/main.ffa3e0dc.chunk.js",
-    "main.js.map": "./static/js/main.ffa3e0dc.chunk.js.map",
+    "main.css": "./static/css/main.864b8713.chunk.css",
+    "main.js": "./static/js/main.fea942d9.chunk.js",
+    "main.js.map": "./static/js/main.fea942d9.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.8cd23658.js",
     "runtime-main.js.map": "./static/js/runtime-main.8cd23658.js.map",
     "static/js/2.0944defd.chunk.js": "./static/js/2.0944defd.chunk.js",
     "static/js/2.0944defd.chunk.js.map": "./static/js/2.0944defd.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.69801e9f.chunk.css.map": "./static/css/main.69801e9f.chunk.css.map",
+    "static/css/main.864b8713.chunk.css.map": "./static/css/main.864b8713.chunk.css.map",
     "static/js/2.0944defd.chunk.js.LICENSE.txt": "./static/js/2.0944defd.chunk.js.LICENSE.txt",
     "static/media/TV-set.3bca90b2.png": "./static/media/TV-set.3bca90b2.png",
+    "static/media/arrow_icon-red.d42fff8b.svg": "./static/media/arrow_icon-red.d42fff8b.svg",
     "static/media/arrow_icon.14f1d3c7.svg": "./static/media/arrow_icon.14f1d3c7.svg",
     "static/media/con-video-camera.4dbb78ca.png": "./static/media/con-video-camera.4dbb78ca.png",
     "static/media/App.scss": "./static/media/pattern.3c6d59e2.png"
@@ -18,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.8cd23658.js",
     "static/js/2.0944defd.chunk.js",
-    "static/css/main.69801e9f.chunk.css",
-    "static/js/main.ffa3e0dc.chunk.js"
+    "static/css/main.864b8713.chunk.css",
+    "static/js/main.fea942d9.chunk.js"
   ]
 }
